@@ -1,0 +1,43 @@
+{
+  "folders": {
+    "inbox": "简历/待处理",
+    "passed": "简历/通过",
+    "rejected": "简历/淘汰",
+    "failed": "简历/失败"
+  },
+  "output": {
+    "summary_xlsx": "输出/汇总表.xlsx",
+    "log_file": "输出/处理日志.log"
+  },
+  "education": {
+    "block_associate": true,
+    "reject_part_time": true,
+    "reject_upgrade": true,
+    "exclude_keywords": ["非全日制", "自考", "自学考试", "成人教育", "成人高考", "函授", "专升本", "专接本", "网络教育", "远程教育", "电视大学", "开放大学", "夜大学"]
+  },
+  "schools": {
+    "require_in_list": true,
+    "list": "院校清单.csv",
+    "groups": [],
+    "aliases": "校名别名.json",
+    "xlsx_name_column": 1,
+    "xlsx_first_row": 2
+  },
+  "company_blacklist": [],
+  "match": {
+    "allow_gender_filter": false,
+    "allow_age_filter": false
+  },
+  "rename": {
+    "format": "{name}-简历-{ts}",
+    "ts_pattern": "%Y%m%d-%H%M%S"
+  },
+  "llm": {
+    "api_style": "anthropic",
+    "base_url": "https://api.anthropic.com",
+    "model": "claude-opus-5-5",
+    "api_key_env": "LLM_API_KEY",
+    "max_tokens": 16000,
+    "timeout": 120
+  }
+}

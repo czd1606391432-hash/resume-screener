@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resume-screener"
+version = "0.1.0"
+description = "批量简历甄选:PDF/Word 简历 → 按可配置的规则筛选 → 汇总表;附带 JD 反选和面试题生成。"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["resume", "hr", "recruiting", "screening", "llm"]
+dependencies = [
+    "pdfplumber>=0.10",
+    "python-docx>=1.0",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+full = ["json-repair>=0.30", "fpdf2>=2.7", "pypdf>=4.0"]
+
+[project.scripts]
+resume-screener = "resume_screener.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/czd1606391432-hash/resume-screener"
+
+[tool.setuptools]
+packages = ["resume_screener"]
+
+[tool.setuptools.package-data]
+resume_screener = ["data/*"]

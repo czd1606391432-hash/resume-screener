@@ -1,0 +1,9 @@
+# 必需
+pdfplumber>=0.10
+python-docx>=1.0
+openpyxl>=3.1
+
+# 可选:装了更好,不装也能跑
+json-repair>=0.30   # 模型回复的 JSON 有小毛病时自动修复
+fpdf2>=2.7          # 面试题导出 PDF
+pypdf>=4.0          # 从 PDF 属性里兜底取姓名

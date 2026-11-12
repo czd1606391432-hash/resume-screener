@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.DS_Store
+.venv/
+venv/
+
+# 密钥和本地环境
+.env
+.env.*
+*.key
+
+# 工作目录里的简历、产出和你自己的规则 —— 都是个人信息或内部口径,不要提交
+简历/
+输出/
+workspace/
+my-workspace/
+/rules.json
+/院校清单.*
+/校名别名.json
+*.pdf
+*.docx
+*.doc
+*.xlsx

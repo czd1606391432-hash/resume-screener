@@ -1,0 +1,12 @@
+{
+  "_说明": "自定义校名别名:左边是简历里可能出现的写法(不分大小写),右边是院校清单里的校名。下划线开头的键会被忽略。",
+  "Massachusetts Institute of Technology": "麻省理工学院",
+  "Stanford University": "斯坦福大学",
+  "National University of Singapore": "新加坡国立大学",
+  "Nanyang Technological University": "南洋理工大学",
+  "The University of Hong Kong": "香港大学",
+  "University of Cambridge": "剑桥大学",
+  "University of Oxford": "牛津大学",
+  "Imperial College London": "帝国理工学院",
+  "ETH Zurich": "苏黎世联邦理工学院"
+}
