@@ -10,6 +10,36 @@
 
 > Batch résumé screening for Chinese-language résumés: PDF/DOCX in, rule-based pass/reject with reasons, an Excel roster out. Also matches a job description against the roster and drafts interview questions. Works with Anthropic-compatible or OpenAI-compatible LLM endpoints.
 
+## 运行效果
+
+下面是接真实模型、用 4 份虚构简历跑出来的原始输出（路径做了简化）：
+
+```text
+$ python3 -m resume_screener -w ws process
+已加载院校清单 49 所
+发现 4 份简历,开始处理
+--- 处理 示例简历-张三.docx ---
+  通过:张三 → 简历/通过/张三-20261112-105526/,汇总表第 1 行
+--- 处理 示例简历-李四.docx ---
+  淘汰(规则):毕业院校「示例学院」不在院校清单
+--- 处理 示例简历-王五.docx ---
+  淘汰(快筛):学历类型不合格:教育经历含「函授」
+--- 处理 示例简历-赵六.docx ---
+  通过:赵六 → 简历/通过/赵六-20261112-105533/,汇总表第 2 行
+处理完成:通过 2,淘汰 2,失败 0
+
+$ python3 -m resume_screener -w ws match -f examples/jd.example.txt -n 5 --include-failed
+硬性条件: {"degree_min": "本科", "experience_min": 5, "locations": ["长沙"], ...}
+软性关键词: 后端开发、Python、Go、微服务拆分、Kubernetes、支付系统、订单系统 ...
+汇总表共 2 人,硬性条件通过 1 人,淘汰 1 人
+
+1. 张三  匹配度 45%
+   本科 · 清华大学 · 计算机科学与技术 · 工作 9 年 · 长沙
+   命中关键词: go、kubernetes、python、订单系统、高级后端工程师
+
+✗ 赵六:所在地 上海 不在 长沙
+```
+
 ## 能做什么
 
 | 功能 | 说明 |
